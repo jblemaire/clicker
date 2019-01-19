@@ -39,7 +39,7 @@
 
 
             <div class="myProgress">
-                <div class="HealthBar"></div>
+                <div id="Monster"  class="HealthBar"></div>
             </div>
 
     </div>
@@ -65,6 +65,7 @@
     function move() {
         var elem = document.getElementsByClassName("myBar");
         var enemyHealth = document.getElementsByClassName("HealthBar")[0];
+        var monster = document.getElementById("Monster");
 
         var width = 1;
         var id = setInterval(frame, 10);
@@ -97,6 +98,7 @@
                // console.log(enemyWidth+" - "+percentage_down+" = "+(enemyWidth - percentage_down));// Operation calcul pourcentage 2
                 enemyHealth.style.width = current_percentage + '%';
                 enemyWidth = current_percentage;
+                monster.innerHTML = current_percentage+"%";
                 clearInterval(id);
 
             } else {
